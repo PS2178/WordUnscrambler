@@ -6,33 +6,23 @@ namespace WordUnscrambler
 {
     class Program
     {
+        public const string someText = "This is some text";
+
+        public static readonly string someOtherText = "This is some other text";
+
+        public static readonly Person someOtherPerson = new Person("A", "B");
+
         static void Main(string[] args)
         {
-            //Person person = new Person("John", "Smith");
-
-            Person person = new Person("John", "Smith");
-
-            // ?? null coalescing operator
-            Person newPerson = person ?? new Person("Default", "Person");
-
-            //ChangeName(person);
-
-            Console.WriteLine(person.FirstName);
-            Console.WriteLine(person.LastName);
-
-            Console.ReadLine();
+            Console.WriteLine(someText);
+            Console.WriteLine(someOtherText);
         }
 
-        static void ChangeName(Person personToChange)
-        {
-            personToChange.FirstName = "Jane";
-            personToChange.LastName = "Doe";
-        }
+        //static void ChangeName(Person personToChange)
+        //{
+        //    personToChange.FirstName = "Jane";
+        //    personToChange.LastName = "Doe";
+        //}
 
-        // demonstrating ref types
-        static void ChangeNumber(ref int a)
-        {
-            a = 90;
-        }
     }
 }
