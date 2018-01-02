@@ -26,6 +26,7 @@ namespace WordUnscrambler
             personToChange.LastName = "Doe";
         }
 
+        // demonstrating ref types
         static void ChangeNumber(ref int a)
         {
             a = 90;
