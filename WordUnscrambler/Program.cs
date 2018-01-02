@@ -8,11 +8,14 @@ namespace WordUnscrambler
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
-            person.FirstName = "John";
-            person.LastName = "Smith";
+            //Person person = new Person("John", "Smith");
 
-            ChangeName(person);
+            Person person = new Person("John", "Smith");
+
+            // ?? null coalescing operator
+            Person newPerson = person ?? new Person("Default", "Person");
+
+            //ChangeName(person);
 
             Console.WriteLine(person.FirstName);
             Console.WriteLine(person.LastName);
