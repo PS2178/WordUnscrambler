@@ -9,16 +9,33 @@ namespace WordUnscrambler
     {
         static void Main(string[] args)
         {
-            // Creates a text file and saves all contents of the string array 
-            string[] lines = { "This is the first line", "This is the second line", "This is the third line" };
-            File.WriteAllLines("MyFirstFile.txt", lines);
-
-            string[] fileContents = File.ReadAllLines("MyFirstTextFile.txt");
-
-            foreach(string line in File.ReadLines("MyFirstFile.txt"))
+            bool continueWordUnscramble = true;
+            do
             {
-                Console.WriteLine(line);
-            }
+                Console.WriteLine("Please enter the option - F for File and M for Manual");
+                var option = Console.ReadLine() ?? string.Empty;
+
+                switch (option.ToUpper())
+                {
+                    case "F":
+                        Console.Write("Enter scrambled words file name: ");
+                        ExecuteScrambledWordsInFileScenario();
+                        break;
+                    case "M":
+                        Console.Write("Enter scrambled words manually: ");
+                        ExecuteScrambledWordsManuallyEntryScenario();
+                        break;
+                    default:
+                        Console.Write("Option was not recognized.");
+                        break;
+                }
+
+            } while{ };
+        }
+
+        private static void ExecuteScrambledWordsInFileScenario()
+        {
+            throw new NotImplementedException();
         }
     }
 }
