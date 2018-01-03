@@ -29,13 +29,28 @@ namespace WordUnscrambler
                         Console.Write("Option was not recognized.");
                         break;
                 }
+                var continueWordUnscrambleDecision = string.Empty;
+                do
+                {
 
-            } while{ };
+                    Console.WriteLine("Do you want to continue? Y/N");
+                    continueWordUnscrambleDecision = (Console.ReadLine() ?? string.Empty);
+
+                } while (!continueWordUnscrambleDecision.Equals("Y", StringComparison.OrdinalIgnoreCase) && !continueWordUnscrambleDecision.Equals("N", StringComparison.OrdinalIgnoreCase));
+
+                continueWordUnscramble = continueWordUnscrambleDecision.Equals("Y", StringComparison.OrdinalIgnoreCase);
+
+            } while(continueWordUnscramble);
+        }
+
+        private static void ExecuteScrambledWordsManuallyEntryScenario()
+        {
+            
         }
 
         private static void ExecuteScrambledWordsInFileScenario()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
